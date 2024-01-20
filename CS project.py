@@ -163,37 +163,3 @@ else:
         elif n==5:
             print("Thank you!")
             break
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-                
