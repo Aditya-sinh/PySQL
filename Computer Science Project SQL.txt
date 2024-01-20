@@ -1,0 +1,125 @@
+create database football;
+use football;
+create table standings
+( position integer NOT NULL UNIQUE,
+team_name varchar(30),
+matches_played integer,
+points integer,
+goals_scored integer,
+goals_conceded integer,
+goals_tally integer,
+PRIMARY KEY(position, team_name));
+
+
+create table transfers
+( player_name varchar(30) NOT NULL,
+former_team varchar(30),
+transferred_team varchar(30) PRIMARY KEY,
+value integer);
+
+
+create table profits
+(team_name varchar(30) PRIMARY KEY,
+net_profit integer,
+tickets_sold_percent integer,
+streaming_percent integer,
+sponsor_percent integer);
+
+
+create table gboot
+(rnk integer UNIQUE,
+player_name varchar(30),
+team_name varchar(30),
+matches_played integer,
+goals_scored integer,
+PRIMARY KEY(rnk, team_name));
+
+
+create table gglove
+(rnk integer UNIQUE,
+player_name varchar(30),
+team_name varchar(30),
+matches_played integer,
+saves integer,
+PRIMARY KEY(rnk, team_name));
+
+
+
+
+
+
+insert into standings values
+(8, "Barcelona", 12, 13, 10, 18, -8);
+insert into standings values
+(7, "Manchester United", 11, 14, 8, 15, -7);
+insert into standings values
+(6, "Bayern Munich", 12, 15, 10, 11, -1);
+insert into standings values
+(5, "PSG", 11, 18, 15, 9, 6);
+insert into standings values
+(4, "Chelsea", 10, 18, 13, 11, 2);
+insert into standings values
+(3, "Manchester City", 12, 22, 24, 8, 16);
+insert into standings values
+(2, "Liverpool", 13, 24, 18, 5, 13);
+insert into standings values
+(1, "Real Madrid", 12, 24, 20, 6, 14);
+
+
+insert into transfers values
+("Sadio Mane", "Liverpool", "Bayern Munich", 56000000);
+insert into transfers values
+("Ferran", "Manchester City", "Barcelona", 35000000);
+insert into transfers values
+("Sterling", "Manchester City", "Chelsea", 56200000);
+insert into transfers values
+("Caesemiro", "Real Madrid", "Manchester United", 60000000);
+insert into transfers values
+("Georgino", "Liverpool", "PSG", 52000000);
+
+
+
+
+insert into profits values
+("Barcelona", 192700000, 40.08, 48.25, 11.67);
+insert into profits values
+("Manchester United", 234000000, 44.63, 43.17, 12.20);
+insert into profits values
+("Bayern Munich", 276800000, 48.69, 35.76, 15.55);
+insert into profits values
+("PSG", 318600000, 35.51, 43.19, 22.30);
+insert into profits values
+("Chelsea", 304900000, 53.57, 42.32, 5.90);
+insert into profits values
+("Manchester City", 310000000, 38.23, 41.43, 20.34);
+insert into profits values
+("Liverpool", 284400000, 47.63, 42.29, 10.08);
+insert into profits values
+("Real Madrid", 350000000, 39.58, 45.18, 15.24);
+
+
+
+
+insert into gboot values
+(1, "Benzema", "Real Madrid", 12, 27);
+insert into gboot values
+(2, "Haaland", "Manchester City", 12, 20);
+insert into gboot values
+(3, "Salah", "Liverpool", 13, 20);
+insert into gboot values
+(4, "Mbappe", "PSG", 10, 13);
+insert into gboot values
+(5, "Sadio", "Bayern Munich", 7, 12);
+
+
+
+insert into gglove values
+(2, "Courtois", "Real Madrid", 11, 18);
+insert into gglove values
+(3, "Ederson", "Manchester City", 11, 15);
+insert into gglove values
+(1, "Alisson", "Liverpool", 10, 20);
+insert into gglove values
+(5, "Ter Stegen", "Barcelona", 10, 13);
+insert into gglove values
+(4, "Neuer", "Bayern Munich", 12, 15);
